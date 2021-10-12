@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Rating from '../components/Rating';
 import data from '../data';
-
 export default function ProductScreen(props) {
   const product = data.products.find((x) => x._id === props.match.params.id);
   if (!product) {
@@ -26,7 +25,7 @@ export default function ProductScreen(props) {
                 numReviews={product.numReviews}
               ></Rating>
             </li>
-            <li>Price : ${product.price}</li>
+            <li>Pirce : ${product.price}</li>
             <li>
               Description:
               <p>{product.description}</p>
@@ -49,18 +48,18 @@ export default function ProductScreen(props) {
                     {product.countInStock > 0 ? (
                       <span className="success">In Stock</span>
                     ) : (
-                      <span className="error">Unavailable</span>
-                    )}
-                  </div>
-                </div>
-              </li>
-              <li>
-                <button className="primary block">Add to Cart</button>
-              </li>
-            </ul>
+                      <span className="danger">Unavailable</span>
+                      )}
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <button className="primary block">Add to Cart</button>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  );
-}
+      );
+    }
