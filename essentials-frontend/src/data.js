@@ -5,7 +5,7 @@ const data = {
         name: 'White Rice 5kg Pack',
         category: 'Groceries',
         image: '/images/p1-white-rice.jpg',
-        price: 120,
+        price: 120, 
         countInStock: 10,
         brand: 'Palmares',
         rating: 4.5,
