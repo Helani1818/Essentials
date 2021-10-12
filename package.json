@@ -1,0 +1,24 @@
+{
+  "name": "essentials",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "This is a website for an e-commerce business called \"Essentials\". This uses the MERN stack for the development.",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start":"nodemon --watch backend --exec node --experimental-modules backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Helani1818/Essentials.git"
+  },
+  "author": "Samadhi Wilegoda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Helani1818/Essentials/issues"
+  },
+  "homepage": "https://github.com/Helani1818/Essentials#readme"
+}
