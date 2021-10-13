@@ -7,9 +7,11 @@
   "dependencies": {
     "express": "^4.17.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  },
   "scripts": {
-    "start":"nodemon --watch backend --exec node --experimental-modules backend/server.js"
+    "start": "nodemon --watch essentials-backend --exec node --experimental-modules eseentials-backend/server.js"
   },
   "repository": {
     "type": "git",
