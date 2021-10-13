@@ -11,7 +11,7 @@
     "nodemon": "^2.0.13"
   },
   "scripts": {
-    "start": "nodemon --watch essentials-backend --exec node --experimental-modules eseentials-backend/server.js"
+    "start": "nodemon --watch essentials-backend --exec node --experimental-modules essentials-backend/server.js"
   },
   "repository": {
     "type": "git",
