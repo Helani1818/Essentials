@@ -138,6 +138,15 @@ const userControl = {
         } catch (err) {
             return res.status(500).json({msg: err.message})
         }
+    },
+    getUsersAllInfo: async (req, res) => {
+        try {
+            const users = await Users.find().select('-password')
+
+            res.json(users)
+        } catch (err) {
+            return res.status(500).json({msg: err.message})
+        }
     }
 
 }
