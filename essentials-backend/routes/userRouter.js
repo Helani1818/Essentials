@@ -19,4 +19,6 @@ router.get('/info', auth, userControl.getUserInfo)
 
 router.get('/all_info', auth, authAdmin, userControl.getUsersAllInfo)
 
+router.get('/logout', userControl.logout)
+
 module.exports = router
