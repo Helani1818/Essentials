@@ -23,11 +23,10 @@ app.use('/user', require('./routes/userRouter'))
 mongoose.connect('mongodb://localhost:27017/EssentialsDB',
   {
     useNewUrlParser: true,
-    //useFindAndModify: false,
     useUnifiedTopology: true
   }, err => {
     if(err) throw err;
-    console.log("Connected successfully")
+    console.log("Connected to database successfully")
 })
 
 // const db = mongoose.connection;
@@ -36,17 +35,13 @@ mongoose.connect('mongodb://localhost:27017/EssentialsDB',
   
 // })
 
-app.listen(3000, () => {
-    console.log("Initializing the Essentials Backend");
-  })
+// app.listen(3000, () => {
+//     console.log("Initializing the Essentials Backend");
+//   })
 
-// app.use('/', (req, res, next) => {
-//     res.json({msg: "Hello Everyone"})
-// })
-
-// const PORT = process.env.PORT || 3000
-// app.listen(PORT, () => {
-//     console.log('Server is running on port', PORT)
-// })
+const PORT = process.env.PORT || 5000
+app.listen(PORT, () => {
+    console.log('Server is running on port', PORT)
+})
 
 //console.log("Initializing the Essentials Backend.")
