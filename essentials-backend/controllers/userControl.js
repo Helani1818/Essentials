@@ -181,7 +181,15 @@ const userControl = {
             return res.status(500).json({msg: err.message})
         }
     },
+    delateUser: async (req, res) => {
+        try {
+            await Users.findByIdAndDelete(req.params.id)
 
+            res.json({msg: "Deleted Successfully!"})
+        } catch (err) {
+            return res.status(500).json({msg: err.message})
+        }
+    },
 }
 
 

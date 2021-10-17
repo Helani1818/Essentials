@@ -25,4 +25,6 @@ router.patch('/update', auth, userControl.updateUser)
 
 router.patch('/update_role/:id', auth, authAdmin, userControl.updateUserRole)
 
+router.delete('/delete/:id', auth, authAdmin, userControl.delateUser)
+
 module.exports = router
