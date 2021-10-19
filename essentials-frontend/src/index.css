@@ -85,7 +85,7 @@ button:hover {
   border: 0.1rem #404040 solid;
 }
 button.primary {
-  background-color: #f0c040;
+  background-color: #ffd300;
 }
 button.block {
   width: 100%;
@@ -111,7 +111,7 @@ a.brand {
 .row {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 .row.center {
@@ -121,14 +121,21 @@ a.brand {
   align-items: flex-start;
 }
 .col-1 {
-  flex: 1 1 25rem;
+  flex: 1 1 10rem;
 }
 .col-2 {
   flex: 2 1 50rem;
 }
+.min-30{
+  min-width: 30rem;
+}
 /* Image */
 img {
   border-radius: 0.5rem;
+}
+img.small {
+  max-width: 5rem;
+  width: 100%;
 }
 img.medium {
   max-width: 20rem;
