@@ -1,7 +1,21 @@
+import bcrypt from 'bcryptjs';
 const data = {
+    users: [
+      {
+        name: 'Samadhi',    
+        email: 'admin@123.com',
+        password: bcrypt.hashSync('1234', 8),
+        isAdmin: true,
+      },
+      {
+        name: 'Helani',         
+        email: 'user@123.com',
+        password: bcrypt.hashSync('1234', 8),
+        isAdmin: false,
+      },
+    ],
     products: [
       {
-        _id: '1',
         name: 'White Rice 5kg Pack',
         category: 'Groceries',
         image: '/images/p1-white-rice.jpg',
@@ -13,7 +27,6 @@ const data = {
         description: 'Gold',
       },
       {
-        _id: '4',
         name: 'Red cherry tomatoes',
         category: 'Vegetables',
         image: '/images/p4-red-cherry-tomatoes.jpg',
@@ -25,7 +38,6 @@ const data = {
         description: 'Organic',
       },
       {
-        _id: '5',
         name: 'Raw prawns',
         category: 'Seafood',
         image: '/images/p5-raw-prawns.jpg',
@@ -37,7 +49,6 @@ const data = {
         description: 'None',
       },
       {
-        _id: '6',
         name: 'Whole Chicken',
         category: 'Meat',
         image: '/images/p6-raw-whole-chicken.jpg',
@@ -49,7 +60,6 @@ const data = {
         description: 'None',
       },
       {
-        _id: '7',
         name: 'Limes',
         category: 'Vegetables',
         image: '/images/p7-limes.jpg',
@@ -61,7 +71,6 @@ const data = {
         description: 'Organic',
       },
       {
-        _id: '9',
         name: 'Bell Pepper',
         category: 'Vegetables',
         image: '/images/p9-bell-pepper.jpg',
