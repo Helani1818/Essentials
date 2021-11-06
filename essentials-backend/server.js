@@ -4,10 +4,10 @@ import productRouter from './routers/productRouter.js';
 import userRouter from './routers/userRouter.js';
 
 const app = express();
-mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/essentials',{
-  userNewUrlParser: true,
+mongoose.connect(process.env.MONGODB_URL ||'mongodb://localhost/essentials',{
+  useNewUrlParser: true,
   useUnifiedTopology: true,
-  useCreateIndex: true,
+  //useCreateIndex: true,
 });
 
 app.use('/api/users', userRouter);
