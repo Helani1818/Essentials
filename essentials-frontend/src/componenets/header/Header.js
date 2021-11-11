@@ -9,7 +9,7 @@ function Header() {
             </div>
 
             <div>
-                <ul className="nav">
+                <ul>
                     <li><Link to="/">Cart</Link></li>
                     <li><Link to="/login">Sign In</Link></li>
                 </ul>
