@@ -85,6 +85,36 @@ header ul li:hover{
   opacity: 1;
 }
 
+header ul li img{
+  width: 30px;
+  height: 30px;
+  transform: translate(-5px);
+  border-radius: 30%;
+}
+
+.drop-nav{ 
+  position: relative;
+  padding: 10px 30px;
+}
+
+.drop-nav a{
+  text-transform:capitalize;
+  overflow: hidden;
+}
+
+.drop-nav .dropdown{
+  position: absolute;
+  background: #70B319;
+  /*width: 100%;
+  width: calc(100% + 30px);*/
+  top: 50px;
+  display: none; 
+}
+
+.drop-nav:hover .dropdown{
+  display: block;
+} 
+
 .row {
   display: flex;
   flex-wrap: wrap;
