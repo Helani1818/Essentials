@@ -39,10 +39,9 @@ function Register() {
             return setUser({...user, err: "Password did not match.", success: ''})
 
         try { 
-            const res = await axios.post('/user/register', {
-                name, email, password
+            const res = await axios.post('/user/register', {name, email, password
             })
-
+            
             setUser({...user, err: '', success: res.data.msg})
 
         } catch (err) {
@@ -61,22 +60,27 @@ function Register() {
             <form onSubmit={handleSubmit}>
             <div>
                     <label htmlFor="name"> Name </label>
-                    <input type="text" placeholder="Enter Name" id="name" value={name} name="name" onChange={handleChangeInput} />
+                    <input type="text" placeholder="Enter Name" id="name" 
+                    value={name} name="name" onChange={handleChangeInput} />
                 </div>
                 
                 <div>
                     <label htmlFor="email"> Email Address </label>
-                    <input type="text" placeholder="Enter Email Address" id="email" value={email} name="email" onChange={handleChangeInput} />
+                    <input type="text" placeholder="Enter Email Address" id="email" 
+                    value={email} name="email" onChange={handleChangeInput} />
                 </div>
 
                 <div>
                     <label htmlFor="password"> Password </label>
-                    <input type="password" placeholder="Enter Password" id="password" value={password} name="password" onChange={handleChangeInput} />
+                    <input type="password" placeholder="Enter Password" id="password" 
+                    value={password} name="password" onChange={handleChangeInput} />
                 </div>
 
                 <div>
                     <label htmlFor="cf_password"> Confirm Password </label>
-                    <input type="password" placeholder="Confirm Password" id="cf_password" value={cf_password} name="cf_password" onChange={handleChangeInput} />
+                    <input type="password" placeholder="Confirm Password" 
+                    id="cf_password" value={cf_password} name="cf_password" 
+                    onChange={handleChangeInput} />
                 </div>
  
                 <div className="row">
