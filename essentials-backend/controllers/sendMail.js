@@ -27,7 +27,7 @@ const sendEmail = (to, url, txt) => {
     const smtpTransport = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            type: 'OAUTH2',
+            type: 'OAuth2',
             user: SENDER_EMAIL_ADDRESS,
             clientId: MAILING_SERVICE_CLIENT_ID,
             clientSecret: MAILING_SERVICE_CLIENT_SECRET,
