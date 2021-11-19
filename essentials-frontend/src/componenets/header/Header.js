@@ -9,7 +9,6 @@ function Header() {
 
     const {user, isLogged} = auth
 
-
     const handleLogout = async () => {
         try {
             await axios.get('/user/logout')
