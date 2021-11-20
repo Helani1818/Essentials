@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 import {showErrMsg, showSuccessMsg} from '../../utils/notification/Notification'
 import {isEmpty, isEmail, isLength, isMatch} from '../../utils/validation/Validation'
@@ -21,7 +21,7 @@ function Register() {
 
     const handleChangeInput = e => {
         const {name, value} = e.target
-        setUser({...user, [name]:value, err:'', success:''})
+        setUser({...user, [name]:value, err: '', success: ''})
     }
 
     const handleSubmit = async e => {
@@ -38,8 +38,9 @@ function Register() {
         if(!isMatch(password, cf_password))
             return setUser({...user, err: "Password did not match.", success: ''})
 
-        try { 
-            const res = await axios.post('/user/register', {name, email, password
+        try {
+            const res = await axios.post('/user/register', {
+                name, email, password
             })
             
             setUser({...user, err: '', success: res.data.msg})
@@ -58,7 +59,7 @@ function Register() {
             {success && showSuccessMsg(success)}
 
             <form onSubmit={handleSubmit}>
-            <div>
+                <div>
                     <label htmlFor="name"> Name </label>
                     <input type="text" placeholder="Enter Name" id="name" 
                     value={name} name="name" onChange={handleChangeInput} />

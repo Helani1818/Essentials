@@ -5,7 +5,7 @@ import {dispatchLogin, fetchUser, dispatchGetUser} from './redux/actions/authAct
 
 import Header from './componenets/header/Header'
 import Body from './componenets/body/Body'
-import axios from 'axios'
+import axios from 'axios';
 
 function App() {
 
@@ -38,7 +38,7 @@ function App() {
   },[token, dispatch])
 
   return (
-     <Router>
+    <Router>
       <div className="App">
         <Header />
         <Body />

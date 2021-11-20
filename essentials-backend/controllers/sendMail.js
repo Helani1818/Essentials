@@ -1,7 +1,7 @@
 const nodemailer = require('nodemailer')
 const {google} = require('googleapis')
-const {OAuth2} = google.auth
-const OAUTH_PLAYGROUND = "https://developers.google.com/oauthplayground"
+const {OAuth2} = google.auth;
+const OAUTH_PLAYGROUND = 'https://developers.google.com/oauthplayground'
 
 const {
     MAILING_SERVICE_CLIENT_ID,
@@ -54,7 +54,7 @@ const sendEmail = (to, url, txt) => {
         
             <div>${url}</div>
             </div>
-    ` 
+    	` 
     }
 
     smtpTransport.sendMail(mailOptions, (err, infor) => {
