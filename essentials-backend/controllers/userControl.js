@@ -214,7 +214,7 @@ const userControl = {
 
             if(user){
                 const isMatch = await bcrypt.compare(password, user.password)
-                if(!isMatch) return res.status(400).json({msg: "Password is incorrect."})
+                if(!isMatch) return res.status(400).json({msg: "Account already exists."})
 
                 const refresh_token = createRefreshToken({id: user._id})
                 res.cookie('refreshtoken', refresh_token, {
