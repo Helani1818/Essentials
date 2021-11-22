@@ -23,7 +23,7 @@ function App() {
               Cart
               {cartItems.length > 0 && (
                 <span className="badge"> {cartItems.length}</span>
-            )}
+              )}
             </Link>
             <Link to="/signin">Sign In</Link>
           </div>
