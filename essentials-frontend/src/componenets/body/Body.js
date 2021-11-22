@@ -13,8 +13,6 @@ import ResetPass from '../body/auth/ResetPassword'
 import Profile from '../body/profile/Profile'
 import EditUser from '../body/profile/EditUser'
 
-// import Home from '../body/home/Home'
-
 import {useSelector} from 'react-redux'
 
 function Body() {
@@ -25,7 +23,6 @@ function Body() {
     return (
         <section>
             <Switch>
-                {/* <Route path="/" component={Home} exact /> */}
 
                 <Route path="/login" component={isLogged ? NotFound : Login} exact />
                 <Route path="/register" component={isLogged ? NotFound : Register} exact />
