@@ -115,7 +115,9 @@ a.brand {
   align-items: center;
 }
 .row.center {
-  justify-content: center;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 .row.top {
   align-items: flex-start;
@@ -144,7 +146,10 @@ img.medium {
   height: 100%;
 }
 img.large {
+  max-width: 40rem;
   width: 100%;
+  max-height: 40rem;
+  height: 100%;
 }
 
 /* Card */
