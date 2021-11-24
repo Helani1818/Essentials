@@ -5,10 +5,14 @@
   "description": "This is a website for an e-commerce business called \"Essentials\". This uses the MERN stack for the development.",
   "main": "index.js",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.16",
     "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
     "express-async-handler": "^1.2.0",
-    "mongoose": "^6.0.12"
+    "mongoose": "^6.0.12",
+    "react-icons": "^4.3.1"
   },
   "devDependencies": {
     "eslint": "^8.0.0",
