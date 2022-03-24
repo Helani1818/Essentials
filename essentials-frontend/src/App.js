@@ -25,7 +25,7 @@ function App() {
                 <span className="badge"> {cartItems.length}</span>
               )}
             </Link>
-            <Link to={{ pathname: "http://localhost:3001/login" }} target="_blank">
+            <Link to={{ pathname: "http://localhost:3001/login"}} target="_blank">
 
               Sign In
               
