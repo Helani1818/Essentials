@@ -39,12 +39,12 @@ function Header() {
     return (
         <header className="row">
             <div>
-                <h1><Link to="/">Essentials</Link></h1>
+                <h1><Link to={{ pathname: "http://localhost:3000" }} target="_blank">Essentials</Link></h1>
             </div>
 
             <div>
                 <ul>
-                    <li><Link to="/">Cart</Link></li>
+                    <li><Link to={{ pathname: "http://localhost:3000/cart" }} target="_blank">Cart</Link></li>
                     {
                         isLogged
                         ? userLink()
