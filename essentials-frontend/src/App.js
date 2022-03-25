@@ -1,50 +1,68 @@
-import React, {useEffect} from 'react';
-import {BrowserRouter as Router} from 'react-router-dom'
-import {useDispatch, useSelector} from 'react-redux'
-import {dispatchLogin, fetchUser, dispatchGetUser} from './redux/actions/authAction'
-
-import Header from './componenets/header/Header'
-import Body from './componenets/body/Body'
-import axios from 'axios';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { BrowserRouter, Link, Route } from 'react-router-dom';
+import { signout } from './actions/userActions';
+import CartScreen from './screens/CartScreen';
+import HomeScreen from './screens/HomeScreen';
+import ProductScreen from './screens/ProductScreen';
+import RegisterScreen from './screens/RegisterScreen';
+import SigninScreen from './screens/SigninScreen';
 
 function App() {
-
-  const dispatch = useDispatch()
-  const token = useSelector(state => state.token)
-  const auth = useSelector(state => state.auth)
-
-  useEffect(() => {
-    const firstLogin = localStorage.getItem('firstLogin')
-    if(firstLogin){
-      const getToken = async () => {
-        const res = await axios.post('/user/refresh_token', null)
-        dispatch({type: 'GET_TOKEN', payload: res.data.access_token})
-      }
-      getToken()
-    }
-  },[auth.isLogged, dispatch])
-
-  useEffect(() => {
-    if(token){
-      const getUser = () => {
-        dispatch(dispatchLogin())
-
-        return fetchUser(token).then(res => {
-          dispatch(dispatchGetUser(res))
-        })
-      }
-      getUser()
-    }
-  },[token, dispatch])
+  const cart = useSelector((state) => state.cart);
+  const {cartItems} = cart;
+  const userSignin = useSelector((state) => state.userSignin);
+  const { userInfo } = userSignin;
+  const dispatch = useDispatch();
+  const signoutHandler = () => {
+    dispatch(signout());
+  };
 
   return (
-    <Router>
-      <div className="App">
-        <Header />
-        <Body />
+    <BrowserRouter>
+      <div className="grid-container">
+        <header className="row">
+          <div>
+            <Link className="brand" to="/">
+              Essentials
+            </Link>
+          </div>
+          <div>
+            <Link to="/cart">
+              Cart
+              {cartItems.length > 0 && (
+                <span className="badge"> {cartItems.length}</span>
+              )}
+            </Link>
+            { userInfo ? (
+                <div className="dropdown">
+                <Link to="#"> 
+                  {userInfo.name} <i className="fa fa-caret-down"></i> 
+                </Link>
+                <ul className="dropdown-content">
+                  <li>
+                    <Link to="#signout" onClick={signoutHandler}>
+                      Sign Out
+                    </Link>
+                  </li>
+                </ul>
+                </div>
+                ) : (
+                  <Link to="/signin"> Sign In </Link>
+                )
+            }
+          </div>
+        </header>
+        <main>
+          <Route path="/cart/:id?" component={CartScreen}></Route>
+          <Route path="/product/:id" component={ProductScreen}></Route>
+          <Route path="/signin" component={SigninScreen}></Route>
+          <Route path="/register" component={RegisterScreen}></Route>
+          <Route path="/" component={HomeScreen} exact></Route>
+        </main>
+        <footer className="row center">All rights reserved</footer>
       </div>
-    </Router>
+    </BrowserRouter>
   );
 }
-
 export default App;

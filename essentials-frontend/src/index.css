@@ -2,7 +2,6 @@ html {
   font-size: 62.5%; /* 16px x 62.5 = 10px = 1rem */
   box-sizing: border-box;
 }
-
 body {
   margin: 0;
   height: 100vh;
@@ -11,8 +10,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-#root {
+#root{
   height: 100%;
 }
 
@@ -27,29 +25,24 @@ body {
   grid-template-rows: 5rem 1fr 5rem;
   height: 100%;
 }
-
 header {
   grid-area: header;
   background-color: #70B319;
 }
-
 main {
   grid-area: main;
   padding: 1rem;
 }
-
 footer {
   grid-area: footer;
   background-color: #70B319;
   color: #ffffff;
 }
-
 /* Common */
 h1 {
   font-size: 1.8rem;
   padding: 1rem 0;
 }
-
 h2 {
   font-size: 1.6rem;
   padding: 1rem 0;
@@ -58,82 +51,105 @@ h2 {
 a {
   text-decoration: none;
 }
-
 a:hover {
   color: #000000;
 }
-
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+li {
+  margin-top: 1rem;
+}
+input,
+select,
+textarea,
+button {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 0.1rem #a4a4a4 solid;
+  font-size: 1.6rem;
+  font-family: Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+button{
+  background-color: #f8f8f8;
+  cursor: pointer;
+}
+input:hover,
+select:hover,
+textarea:hover,
+button:hover {
+  border: 0.1rem #404040 solid;
+}
+button.primary {
+  background-color: #ffd300;
+}
+button.block {
+  width: 100%;
+}
 /* Header */
 header a {
   color: #ffffff;
   padding: 1rem;
 }
-
 a.brand {
   color: #ffffff;
   font-size: 3rem;
   font-weight: bold;
 }
-
-header ul li{
-  display: inline-block;
-  padding: 10px 20px;
-  opacity: 0.7;
+.badge{
+  background-color: #f02020;
+  color: #ffffff;
+  border-radius: 50%;
+  padding: 0.2rem 0.7rem;
+  font-size: 1.4rem;
+  margin-left: 0.2rem;
 }
-
-header ul li:hover{
-  opacity: 1;
-}
-
-header ul li img{
-  width: 30px;
-  height: 30px;
-  transform: translate(-5px);
-  border-radius: 30%;
-}
-
-.drop-nav{ 
-  position: relative;
-  padding: 10px 30px;
-}
-
-.drop-nav a{
-  text-transform:capitalize;
-  overflow: hidden;
-}
-
-.drop-nav .dropdown{
-  position: absolute;
-  background: #70B319;
-  /*width: 100%;
-  width: calc(100% + 30px);*/
-  top: 50px;
-  display: none; 
-}
-
-.drop-nav:hover .dropdown{
-  display: block;
-} 
-
 .row {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 }
-
 .row.center {
-  justify-content: center;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
-
+.row.top {
+  align-items: flex-start;
+}
+.col-1 {
+  flex: 1 1 10rem;
+}
+.col-2 {
+  flex: 2 1 50rem;
+}
+.min-30{
+  min-width: 30rem;
+}
 /* Image */
 img {
   border-radius: 0.5rem;
 }
-
+img.small {
+  max-width: 5rem;
+  width: 100%;
+}
 img.medium {
   max-width: 20rem;
   width: 100%;
+  max-height: 20rem;
+  height: 100%;
+}
+img.large {
+  max-width: 40rem;
+  width: 100%;
+  max-height: 40rem;
+  height: 100%;
 }
 
 /* Card */
@@ -143,285 +159,79 @@ img.medium {
   border-radius: 0.5rem;
   margin: 1rem;
 }
-
 .card-body {
   padding: 1rem;
 }
-
 .card-body > * {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
-
 .price {
-  font-size: 2rem;
+  font-size: 1.8rem;
+  margin-left: 1rem;
 }
-
 /* Rating */
 .rating span {
   color: #f0c040;
   margin: 0.1rem;
 }
+.rating span:last-child {
+  color: #404040;
+}
+/* Alert */
+.loading {
+  display: block !important;
+}
+.success {
+  color: #20a020;
+}
+.danger {
+  color: #a02020;
+}
+.alert {
+  padding: 1rem;
+  border: 0.1rem solid transparent;
+  border-radius: 0.5rem;
+}
+.alert-info {
+  color: #2020a0;
+  background-color: #e0e0ff;
+}
+.alert-danger {
+  color: #a02020;
+  background-color: #ffe0e0;
+}
 
-.login_page{
-  max-width: 500px;
-  margin: auto;
-  color: #444;
-  padding: 0 15px;
+/* Form */
+.form {
+  max-width: 60rem;
+  margin: 0 auto;
 }
-.login_page h2{
-  text-transform: uppercase;
-  font-size: 2rem;
-  margin: 20px 0;
-  letter-spacing: 1.5px;
-}
-
-.login_page input{
-  width: 100%;
-  height: 45px;
-  margin: 10px 0;
-  border: 2px solid #777;
-  outline: none;
-  padding: 0 10px;
-}
-.login_page .row{
+.form > div {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap-reverse;
-  align-items: flex-start;
+  flex-direction: column;
+  margin: 1rem;
 }
-.login_page .row a{
-  color: crimson;
-}
-.login_page .row button{
-  width: 150px;
-  padding: 10px 0;
-  color: white;
-  background: black;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  margin-right: 10px;
-}
-.login_page p{
-  margin: 10px 0;
-}
-.login_page a{
-  color: #111;
-  font-weight: 600;
+.form label {
+  margin: 1rem 0;
 }
 
-/* ------------- Forgot Password --------------- */
-.fg_pass h2{
-  color: #555;
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 2rem;
-  margin: 50px 0;
-  letter-spacing: 1.3px;
-}
-.fg_pass .row{
-  max-width: 500px;
-  margin: auto;
-  padding: 0 10px;
-}
-.fg_pass .row input{
-  width: 100%;
-  height: 45px;
-  border: 1px solid #ccc;
-  outline: none;
-  padding: 0 15px;
-  border-radius: 3px;
-  margin: 5px 0;
-}
-.fg_pass .row button{
-  background: #333;
-  color: white;
-  padding: 10px 30px;
-  text-transform: uppercase;
-  letter-spacing: 1.3px;
-  border-radius: 3px;
-  margin-top: 15px;
-}
-
-/* ---------- Profile ---------------- */
-.profile_page{
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-}
-.profile_page .col-left{
-  max-width: 400px;
-  min-width: 300px;
-  padding: 0 10px;
-  margin: auto;
-}
-
-.profile_page .col-left .avatar{
-  width: 150px;
-  height: 150px;
-  overflow: hidden;
-  position: relative;
-  margin: 15px auto;
-  border: 1px solid #ddd;
-  border-radius: 50%;
-  cursor: pointer;
-}
-.profile_page .col-left img{
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-}
-
-.profile_page .col-left .avatar span{
-  position: absolute;
-  bottom: -100%;
-  left: 0;
-  width: 100%;
-  height: 50%;
-  background: #fff8;
-  text-align: center;
-  font-weight: 400;
-  text-transform: uppercase;
-  color: rgb(255, 140, 45);
-  transition: 0.3s ease-in-out;
-}
-.profile_page .col-left .avatar:hover span{
-  bottom: -15%;
-}
-.profile_page .col-left #file_up{
-  position: absolute;
-  top:0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-  opacity: 0;
-}
-
-.profile_page .col-left h2{
-  text-align: center;
-  font-size: 1.7rem;
-  text-transform: uppercase;
-  color: #333;
-  margin: 10px 0;
-}
-.profile_page .col-left label{
-  display: block;
-  margin-top: 5px;
-}
-.profile_page .col-left input{
-  width: 100%;
-  height: 40px;
-  margin: 5px 0;
-  border: none;
-  outline: none;
-  background: #fee;
-  padding: 0 5px;
-}
-.profile_page .col-left button{
-  background: #333;
-  color: white;
-  padding: 10px 25px;
-  text-transform: uppercase;
-  letter-spacing: 1.4px;
-  margin: 10px 0;
-}
-
-/* ----------- Col Right----------- */
-.profile_page .col-right{
-  padding: 0 10px;
-  flex: 1;
-  min-width: 300px;
-}
-.profile_page .col-right h2{
-  font-size: 1.7rem;
-  text-transform: uppercase;
-  color: #333;
-  margin: 10px 0;
-}
-
-/* ------------ Table------------ */
-.customers{
-  border-collapse: collapse;
-  width: 100%;
-}
-.customers td,
-.customers th{
-  border: 1px solid #ddd;
-  padding: 8px;
-  min-width: 100px;
-}
-.customers tr:nth-child(even){
-  background: #f2f2f2;
-}
-.customers th{
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background: #555;
-  color: white;
-}
-.customers i{
-  cursor: pointer;
-}
-.customers .fa-check{
-  color: green;
-}
-.customers .fa-times{
-  color: red;
-}
-.customers .fa-edit{
-  background: whitesmoke;
-  padding: 7px;
-  color: #555;
-  font-size: 10px;
-}
-.customers .fa-trash-alt{
-  background: red;
-  padding: 7px;
-  color: white;
-  font-size: 10px;
-  margin-left: 7px;
-}
-
-
-/* -------------- Edit User ----------------- */
-.edit_user .go_back{
-  background: white;
-  margin: 20px;
-  font-size: 1.2rem;
-}
-.edit_user .col-left{
-  margin-top: 50px;
-}
-.edit_user .col-left input{
-  background: #eee;
-}
-.edit_user .col-left #isAdmin{
-  width: 20px;
-  height: 20px;
-  transform: translateY(3px);
-  margin: 10px 0;
-}
-.edit_user .col-left #isAdmin + label{
+/* Dropdown */
+.dropdown {
   display: inline-block;
-  margin-left: 5px;
+  position: relative;
 }
-
-
-/* ---------- Google ---------------- */
-.login_page .hr{
-  margin: 15px 0;
-  color: crimson;
+.dropdown-content {
+  position: absolute;
+  display: none;
+  right: 0;
+  min-width: 12rem;
+  padding: 1rem;
+  z-index: 1;
+  background-color: #203040;
+  margin: 0;
+  margin-top: 0.4rem;
+  border-radius: 0.5rem;
 }
-
-.login_page .social button{
-  width: 100%;
-  margin: 10px 0;
-  height: 50px;
-  font-size: 14px;
-  font-weight: 200;
-  text-transform: capitalize;
-  letter-spacing: 1.3px;
-  box-shadow: 0 2px 4px #777;
+.dropdown:hover .dropdown-content {
+  display: block;
 }
