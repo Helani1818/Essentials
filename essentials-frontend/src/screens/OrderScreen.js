@@ -129,8 +129,7 @@ export default function OrderScreen(props) {
             </div>
             <center><div className="card card-body">
              <h3>If you have not received the order within 5 working days,please be kind enough to contact us with 
-               your order number.</h3> 
-             <h4>Contact us: +94 (77) 123456</h4>
+               your order number. Contact us: +94 (77) 123456</h3>
             </div></center>
           </div>
         </div>
