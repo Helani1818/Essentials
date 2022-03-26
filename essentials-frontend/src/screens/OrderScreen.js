@@ -24,7 +24,7 @@ export default function OrderScreen(props) {
         <div>
           <h1><center>THANK YOU FOR YOUR ORDER!</center></h1>
           <h1>Order #{order._id}</h1>
-          <div className="row top">
+          <div className="row top"> 
             <div className="col-2">
               <ul>
                 <li>
@@ -127,11 +127,11 @@ export default function OrderScreen(props) {
               </li>
             </ul>
             </div>
-            <center><div className="card card-body">
+            <div className="card card-body">
              <h3>If you have not received the order within 5 working days,please be kind enough to contact us with 
                your order number. Contact us: +94 (77) 123456</h3>
-            </div></center>
-          </div>
+            </div>
+            </div> 
         </div>
     );
    
