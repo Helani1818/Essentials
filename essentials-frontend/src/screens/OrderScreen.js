@@ -22,7 +22,8 @@ export default function OrderScreen(props) {
     ) : 
     (
         <div>
-          <h1>Order {order._id}</h1>
+          <h1><center>THANK YOU FOR YOUR ORDER!</center></h1>
+          <h1>Order #{order._id}</h1>
           <div className="row top">
             <div className="col-2">
               <ul>
@@ -40,7 +41,7 @@ export default function OrderScreen(props) {
                         Delivered at {order.deliveredAt}
                       </MessageBox>
                     ) : (
-                      <MessageBox variant="danger">Not Delivered</MessageBox>
+                      <MessageBox variant="danger">Your order will be shipped within next 24 hours.</MessageBox>
                     )}
                   </div>
                 </li>
@@ -55,7 +56,7 @@ export default function OrderScreen(props) {
                         Paid at {order.paidAt}
                       </MessageBox>
                     ) : (
-                      <MessageBox variant="danger">Not Paid</MessageBox>
+                      <MessageBox variant="danger">Please make your payment on delivery.</MessageBox>
                     )}
                   </div>
                 </li>
@@ -126,6 +127,11 @@ export default function OrderScreen(props) {
               </li>
             </ul>
             </div>
+            <center><div className="card card-body">
+             <h3>If you have not received the order within 5 working days,please be kind enough to contact us with 
+               your order number.</h3> 
+             <h4>Contact us: +94 (77) 123456</h4>
+            </div></center>
           </div>
         </div>
     );
