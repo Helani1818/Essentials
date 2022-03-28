@@ -21,7 +21,7 @@ import {
       const { data } = await Axios.post('/api/users/register', {
           name, 
           email, 
-          password 
+          password, 
         });
       dispatch({ type: USER_REGISTER_SUCCESS, payload: data });
       dispatch({ type: USER_SIGNIN_SUCCESS, payload: data });
@@ -59,6 +59,7 @@ export const signin = (email, password) => async (dispatch) => {
   localStorage.removeItem('cartItems');
   localStorage.removeItem('shippingAddress');
   dispatch({ type: USER_SIGNOUT });
+  document.location.href = '/signin';
 };
 
 export const detailsUser = (userId) => async (dispatch, getState) => {
@@ -93,6 +94,6 @@ export const updateUserProfile = (user) => async (dispatch, getState) => {
     const message = error.response && error.response.data.message
       ? error.response.data.message
       : error.message;
-      dispatch({ type: USER_UPDATE_PROFILE_FAIL, payload: message });
+    dispatch({ type: USER_UPDATE_PROFILE_FAIL, payload: message });
   }
 };
