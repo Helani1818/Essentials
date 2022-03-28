@@ -38,7 +38,7 @@ export default function ProfileScreen() {
         } else {
             dispatch(updateUserProfile({ userId: user._id, name, email, password }));
         }
-    }
+    };
     return (
         <div>
         <form className="form" onSubmit={submitHandler}>
@@ -48,8 +48,8 @@ export default function ProfileScreen() {
             {
                 loading? <LoadingBox></LoadingBox>
                 :
-                error? <MessageBox varient="danger">{error}</MessageBox>
-                :
+                error? ( <MessageBox varient="danger">{error}</MessageBox>
+                ) : (
                 <>
                 { loadingUpdate && <LoadingBox></LoadingBox>}
                 { errorUpdate && (
@@ -105,7 +105,7 @@ export default function ProfileScreen() {
                         </button>
                     </div>
                 </>
-            }
+            )}
         </form>
     </div>
     )
