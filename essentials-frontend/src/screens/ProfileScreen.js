@@ -35,7 +35,11 @@ export default function ProfileScreen() {
         e.preventDefault();
         if (password !== confirmPassword) {
             alert('Password and Confirm Password are not matched');
-        } else {
+        } 
+        else if (password.length < 8) {
+            alert('Password should contain atleast 8 character');
+        }
+        else {
             dispatch(updateUserProfile({ userId: user._id, name, email, password }));
         }
     };

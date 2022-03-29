@@ -21,17 +21,20 @@ export default function RegisterScreen(props) {
     const submitHandler = (e) => { 
     e.preventDefault();
     if (password !== confirmPassword) {
-        alert('Password and confirm password are not match');
+      alert('Password and confirm password are not match');
     } 
+    else if (password.length < 8) {
+      alert('Password should contain atleast 8 character');
+    }
     else {
         dispatch(register(name, email, password));
     }
 };
     
-    useEffect(() => {
-        if (userInfo) {
-            props.history.push(redirect)
-    }
+useEffect(() => {
+  if (userInfo) {
+    props.history.push(redirect)
+  }
 }, [props.history, redirect, userInfo]);
 
   return (
