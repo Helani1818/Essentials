@@ -23,8 +23,8 @@ export default function RegisterScreen(props) {
     if (password !== confirmPassword) {
       alert('Password and confirm password are not match');
     } 
-    else if (password.length < 8) {
-      alert('Password should contain atleast 8 character');
+    else if (password.length < 6) {
+      alert('Password should contain atleast 6 character');
     }
     else {
         dispatch(register(name, email, password));

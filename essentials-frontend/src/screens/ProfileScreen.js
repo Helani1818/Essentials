@@ -36,8 +36,8 @@ export default function ProfileScreen() {
         if (password !== confirmPassword) {
             alert('Password and Confirm Password are not matched');
         } 
-        else if (password.length < 8) {
-            alert('Password should contain atleast 8 character');
+        else if (password.length < 6) {
+            alert('Password should contain atleast 6 character');
         }
         else {
             dispatch(updateUserProfile({ userId: user._id, name, email, password }));
@@ -94,7 +94,7 @@ export default function ProfileScreen() {
                         ></input>
                     </div>
                     <div>
-                        <label htmlFor="name">Name</label>
+                        <label htmlFor="confirmPassword">Confirm Password</label>
                         <input
                             id ="confirmPassword"
                             type="password"
